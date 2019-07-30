@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>事件响应</title>
+</head>
+
+<body onload="onLoad()">
+    <input type="button" value="点击事件" onclick="onClick()" name="按钮名" />
+    <br />
+    <p onmouseover="onMouseOver()">鼠标经过事件</p>
+    <a href="https:www.baidu.com" onmouseout="onMouseOut()">鼠标离开事件</a>
+    <br />
+    <input type="text" value="请输入姓名" onfocus="onFocus()" onblur="onBlur()" />
+    <br />
+    <textarea rows="5" cols="50" onselect="onSelect()">请输入个人简介，不少于10字</textarea>
+    <br />
+    <textarea rows="5" cols="10" onchange="onChange()">请输入姓名</textarea>
+</body>
+
+<script type="text/javascript">
+    window.onunload = onUnLoad();
+
+    function onUnLoad() {
+        alert("确定要卸载当前页面吗？")
+    }
+
+    function onClick() {
+        confirm("按钮被点击了")
+    }
+    function onMouseOver() {
+        confirm("鼠标经过了")
+    }
+
+    function onMouseOut() {
+        confirm("鼠标离开了")
+    }
+
+    function onFocus() {
+        confirm("获得焦点了")
+    }
+
+    function onBlur() {
+        confirm("失去了焦点")
+    }
+
+    function onSelect() {
+        confirm("文本内容被选中了")
+    }
+
+    function onChange() {
+        alert("内容改变了")
+    }
+
+    function onLoad() {
+        alert("页面加载中...")
+    }
+
+</script>
+
+</html>

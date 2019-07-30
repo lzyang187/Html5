@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>网页的title</title>
+    <meta charset="utf-8" content="text/html" />
+    <link href="index.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <style type="text/css">
+        /*类选择器*/
+        .address {
+            color: blueviolet
+        }
+
+        div {
+            font-family: "Microsoft Yahei";
+            color: #f00;
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+            text-decoration: underline;
+            text-decoration: line-through;
+        }
+
+        p {
+            line-height: 1.5em;
+            letter-spacing: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>这是一个部分</div>
+    <h1 style="background-color: #f00">这是1级标题</h1>
+    <h2 id="h2">这是2级标题</h2>
+    <h3 style="text-align: center">这是3级标题</h3>
+    <hr />
+    <p id="p1">这是段落1</p>
+    <form>
+        <input type="button" value="切换显示段落1" onclick="toogleP1()" />
+        <input type="button" value="更改p1的class名称" onclick="modifyP1ClassName()" />
+    </form>
+    <a target="_self" href="https://www.baidu.com">当前页面打开百度</a>
+    <a href="https://www.google.com" target="_blank">新页面打开Google</a>
+    <ol>
+        <li>有序条目1</li>
+        <li>有序条目2</li>
+    </ol>
+    <ul class="food">
+        <li>水果
+            <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>梨</li>
+            </ul>
+        </li>
+        <li>蔬菜
+            <ul>
+                <li>白菜</li>
+                <li>油菜</li>
+                <li>卷心菜</li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="animal">
+        <li>猫科
+            <ul>
+                <li>老虎</li>
+                <li>大熊猫</li>
+            </ul>
+        </li>
+        <li>爬行类
+            <ul>
+                <li>鳄鱼</li>
+            </ul>
+        </li>
+    </ul>
+    <b>这是粗体字</b>
+    <br />
+    <i>这是斜体字</i>
+    <p><abbr title="世界贸易组织">WTO</abbr>是一个世界范围内的商业贸易组织</p>
+    <p class="address">一打是<del>20</del> <ins>12</ins>个</p>
+    <p>这里插入一段音频：<audio src="test.aac" controls="controls" muted="muted" loop="loop"></audio></p>
+    <video src="" controls="controls" muted="muted" loop="loop"></video>
+    <br />
+    <img src="dogcat.gif"></img>
+    <br />
+    <form method="POST" action="save.php">
+        <label for="username">用户名：</label>
+        <input type="text" name="username" id="username" value="" />
+        <br />
+        <label for="pwd">密码：</label>
+        <input type="password" name="pwd" id="pwd" value="" />
+        <br />
+        <input type="submit" name="submit" value="确定" />
+        <input type="reset" name="reset" value="重置" />
+    </form>
+    <br />
+    <form method="GET" action="save.php">
+        <label>意见反馈</label>
+        <textarea cols="30" rows="5"></textarea>
+        <input type="submit" name="submit" value="提交" />
+    </form>
+    <br />
+    <form>
+        你是否喜欢旅游？
+        <br />
+        <input type="radio" name="radiolove" value="喜欢">喜欢</input>
+        <input type="radio" name="radiolove" value="不喜欢">不喜欢</input>
+        <br />
+        你喜欢哪些运动？
+        <br />
+        <input type="checkbox" name="cb1" value="打球">打球</input>
+        <input type="checkbox" name="cb2" value="跑步">跑步</input>
+        <input type="checkbox" name="cb3" value="登山">登山</input>
+        <br />
+        <label>
+            爱好：
+        </label>
+        <select>
+            <option value="看书">看书</option>
+            <option value="跑步" selected="selected">跑步</option>
+            <option value="打球">打球</option>
+        </select>
+    </form>
+    <br />
+    <address class="address">李朝阳 写于2019-7-16</address>
+
+    <script src="index.js" type="text/javascript"></script>
+</body>
+
+</html>

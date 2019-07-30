@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>中间页</title>
+    <meta charset="utf-8" content="text/html" />
+</head>
+
+<body>
+    <h3>操作成功</h3>
+    <span id="time">5</span><span>秒后回到主页</span><a href="javascript:goBack()">返回</a>
+    <script type="text/javascript">
+        var time = document.getElementById("time").innerHTML;
+        function subTime() {
+            time--;
+            document.getElementById("time").innerHTML = time;
+            if (time == 0) {
+                location.assign("https://www.baidu.com");
+            }
+        }
+        setInterval("subTime()", 1000);
+
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>

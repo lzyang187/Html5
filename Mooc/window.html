@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>window对象</title>
+    <meta charset="utf-8" content="text/html" />
+</head>
+
+<body>
+    <input type="button" value="打开百度" onclick="openBaidu()" />
+    <br />
+    <input type="text" id="date" />
+    <br />
+    <input type="button" onclick="start()" value="启动计时器" />
+    <input type="button" onclick="stop()" value="取消计时器" />
+    <br />
+    <input type="button" onclick="timeout()" value="超时计时器" />
+    <input type="button" onclick="stopTimeout()" value="取消超时计时器" />
+    <br />
+    <input type="button" onclick="showLocation()" value="展示location属性" />
+    <br />
+    <input type="button" onclick="window.location.reload()" value="刷新页面" />
+    <p id="location"></p>
+    <input type="button" onclick="navigatorInfo()" value="浏览器信息" />
+    <p id="navigator"></p>
+    <input type="button" onclick="showScreen()" value="screen信息" />
+    <p id="screen"></p>
+
+    <a href="window_text.html">跳转到测试页面</a>
+
+    <script type="text/javascript">
+        // window.alert("alert信息");
+        // window.prompt("prompt信息");
+        // window.confirm("confirm信息");
+        function openBaidu() {
+            window.open("https://www.baidu.com", "_blank", "width=600 height=400")
+        }
+        var second;
+        function showTime() {
+            var date = new Date();
+            second = date.getSeconds();
+            document.getElementById("date").value = second;
+        }
+
+        var id;
+        function start() {
+            id = setInterval(showTime, 1000);
+        }
+
+        // setInterval(() => {
+        //     var date = new Date();
+        //     var second = date.getSeconds();
+        //     document.getElementById("date").value = second;
+        // }, 1000);
+
+        function stop() {
+            clearInterval(id);
+        }
+
+        var timeoutId;
+        function timeout() {
+            timeoutId = setTimeout(() => {
+                alert("触发了超时计时器")
+            }, 3000);
+        }
+        function stopTimeout() {
+            clearTimeout(timeoutId);
+        }
+
+        //Location对象
+        function showLocation() {
+            var href = window.location.href;
+            var protocol = window.location.protocol;
+            var host = window.location.host;
+            var hostName = window.location.hostname;
+            var port = window.location.port;
+            var pathName = window.location.pathname;
+            var search = window.location.search;
+            var hash = window.location.hash;
+            var locationVar = "href:" + href + "<br/>protocol:" + protocol + "<br/>host:" + host + "<br/>hostName:" + hostName +
+                "<br/>port:" + port + "<br/>pathName:" + pathName + "<br/>search:" + search + "<br/>hash:" + hash;
+            document.getElementById("location").innerHTML = locationVar;
+        }
+
+        //Navigator对象
+        function navigatorInfo() {
+            var info = "浏览器名称：" + window.navigator.appName + "<br/>浏览器代码名：" + window.navigator.appCodeName +
+                "<br/>平台和版本信息：" + window.navigator.appVersion +
+                "<br/>os平台：" + window.navigator.platform + "<br/>ua值：" + window.navigator.userAgent;
+            document.getElementById("navigator").innerHTML = info;
+        }
+
+        //Screen对象
+        function showScreen() {
+            var info = "屏幕宽度：" + screen.width + " 屏幕高度：" + screen.height +
+                "<br/>屏幕可用宽度：" + screen.availWidth + " 屏幕可用高度：" + screen.availHeight;
+            document.getElementById("screen").innerHTML = info;
+        }
+
+    </script>
+</body>
+
+</html>

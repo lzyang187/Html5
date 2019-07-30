@@ -1,0 +1,19 @@
+/*id选择器：作用于id相同的标签*/
+#p1 {
+    color: #f00;
+    font-size: 20px;
+}
+
+/*子代选择器：用于选择指定标签元素的第一代子元素*/
+.food>li {
+    border: 1px solid red;
+}
+/*后代选择器：作用于所有子后代元素*/
+.animal li {
+    border: 1px solid green;
+}
+/*伪类选择器：html中一个标签元素的鼠标滑过的状态来设置字体颜色*/
+a:hover {
+    color: #f0f;
+}
+        

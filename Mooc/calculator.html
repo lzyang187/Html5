@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>数学计算</title>
+    <meta charset="utf-8" content="text/html">
+</head>
+
+<body>
+    <input type="text" id="txt1" />
+    <br />
+    <input type="text" id="txt2" />
+    <br />
+    <select id="sel">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+    <br />
+    <input type="button" onclick="count()" value="开始计算">
+    <br />
+    <input type="text" id="result" />
+
+    <script type="text/javascript">
+        function count() {
+            var num1 = document.getElementById("txt1").value;
+            var num2 = document.getElementById("txt2").value;
+            var sel = document.getElementById("sel").value;
+            var result;
+            switch (sel) {
+                case "+":
+                    result = parseFloat(num1) + parseFloat(num2);
+                    break;
+                case "-":
+                    result = parseFloat(num1) - parseFloat(num2);
+                    break;
+                case "*":
+                    result = parseFloat(num1) * parseFloat(num2);
+                    break;
+                case "/":
+                    result = parseFloat(num1) / parseFloat(num2);
+                    break;
+            }
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+
+</html>
