@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>拖拽的demo</title>
+    <style type="text/css">
+        #div1 {
+            width: 200px;
+            height: 60px;
+            border: 1px solid #aaaaaa;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>请把图片拖到矩形框中</p>
+    <br />
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrag(event)"></div>
+    <!-- 首先需要设置元素可拖放 -->
+    <img id="img1" src="http://adnet.qq.com/assets/images/feedback.jpg" draggable="true" ondragstart="drag(event)" />
+    <script type="text/javascript">
+
+        // 拖动什么 - ondragstart 和 setData() 
+        // 然后，规定当元素被拖动时，会发生什么。
+        function drag(ev) {
+            // 设置被拖数据的数据类型和值：数据类型是 "Text"，值是可拖动元素的 id ("drag1")
+            ev.dataTransfer.setData("Text", ev.target.id)
+        }
+
+        // 放到何处 - ondragover
+        function allowDrag(ev) {
+            // 默认地，无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式
+            ev.preventDefault()
+        }
+
+        // 进行放置 - ondrop
+        function drop(ev) {
+            // 调用 preventDefault() 来避免浏览器对数据的默认处理（drop 事件的默认行为是以链接形式打开）
+            ev.preventDefault()
+            // 通过 dataTransfer.getData("Text") 方法获得被拖的数据。该方法将返回在 setData() 方法中设置为相同类型的任何数据。
+            var id = ev.dataTransfer.getData("Text")
+            // 把被拖元素追加到放置元素（目标元素）中
+            ev.target.appendChild(document.getElementById(id))
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css属性组的demo</title>
+    <style>
+        #p1 {
+            background-color: blue;
+
+            /** 内边距 */
+            padding: 10px;
+
+            color: white;
+
+            /* 改变字（单词）之间的标准间隔。其默认值 normal 与设置值为 0 是一样的 */
+            word-spacing: 30px;
+
+            /* 字母间隔修改的是字符或字母之间的间隔 */
+            letter-spacing: 10px;
+
+            /* 处理文本的大小写：uppercase 和 lowercase 将文本转换为全大写和全小写字符。其中，capitalize 只对每个单词的首字母大写 */
+            text-transform: uppercase;
+
+            /* underline 会对元素加下划线，就像 HTML 中的 U 元素一样。
+            overline 的作用恰好相反，会在文本的顶端画一个上划线。
+            值 line-through 则在文本中间画一个贯穿线，等价于 HTML 中的 S 和 strike 元素。
+            blink 会让文本闪烁，类似于 Netscape 支持的颇招非议的 blink 标记。
+            none 值会关闭原本应用到一个元素上的所有装饰，可以用于去掉超链接的下划线 */
+            text-decoration: line-through underline;
+
+            /* 文本的书写方向， */
+            direction: rtl;
+        }
+
+        #p2 {
+            /** 水平对齐 */
+            text-align: center;
+
+            background-color: gray;
+            height: 600px;
+            color: red;
+
+            background-image: url(../Mooc/dogcat.gif);
+            /** 背景图片重复方式 */
+            background-repeat: no-repeat;
+            /** 背景图片居中放置 */
+            background-position: center;
+            /** 如果文档比较长，那么当文档向下滚动时，背景图像也会随之滚动。当文档滚动到超过图像的位置时，图像就会消失。
+            声明图像相对于可视区是固定的（fixed），因此不会受到滚动的影响 */
+            background-attachment: fixed;
+
+        }
+
+        #div1 {
+            /** 1、首行缩进5 em 还可以设置为负值
+                2、也可以设置百分数，就是相对于缩进元素父元素的宽度。换句话说，如果将缩进值设置为 20%，所影响元素的第一行会缩进其父元素宽度的 20%。
+                3、text-indent可以被继承：id为p3的p元素也会生效*/
+            /* text-indent: 5em; */
+            text-indent: 20%;
+        }
+
+        body {
+            /* 通用字体系列：会从 sans-serif 字体系列中选择一个字体（如 Helvetica），并将其应用到 body 元素。因为有继承，这种字体选择还将应用到 body 元素中包含的所有元素，除非有一种更特定的选择器将其覆盖 */
+            font-family: sans-serif;
+        }
+
+        #p4 {
+            /* 指定字体系列：设置了 Georgia 字体 
+            如果没有安装 Georgia，但安装了 Times 字体（serif 字体系列中的一种字体），用户代理就可能对 p4 元素使用 Times。尽管 Times 与 Georgia 并不完全匹配，但至少足够接近*/
+            font-family: Georgia, serif;
+
+            /* 字体风格:normal - 文本正常显示
+                    italic - 文本斜体显示
+                    oblique - 文本倾斜显示 */
+            font-style: italic;
+
+            /* 字体变形：设定小型大写字母。小型大写字母不是一般的大写字母，也不是小写字母，这种字母采用不同大小的大写字母。 */
+            font-variant: small-caps;
+
+            /* 设置文本的粗细：关键字 100 ~ 900 为字体指定了 9 级加粗度。 如果一个字体内置了这些加粗级别，那么这些数字就直接映射到预定义的级别，
+            100 对应最细的字体变形，900 对应最粗的字体变形。数字 400 等价于 normal，而 700 等价于 bold。 */
+            font-weight: 800;
+
+            /* 文本的大小：普通文本（比如段落）的默认大小是 16 像素 (16px=1em)。 */
+            font-size: 1.5em;
+        }
+
+        /* 链接的状态1：普通的、未被访问的链接 */
+        a:link {
+            background-color: green;
+
+            /* 文本修饰：属性大多用于去掉链接中的下划线： */
+            text-decoration: none;
+        }
+
+        /* 链接的状态2：用户已访问的链接 */
+        a:visited {
+            text-decoration: none;
+        }
+
+        /* 链接的状态3：鼠标指针位于链接的上方
+        为了使定义生效，a:hover 必须位于 a:link 和 a:visited 之后 */
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* 链接的状态4：链接被点击的时刻 
+        为了使定义生效，a:active 必须位于 a:hover 之后*/
+        a:active {
+            text-decoration: underline;
+        }
+
+        /* 列表类型的样式 */
+        ul {
+            /* 修改用于列表项的标志类型 */
+            list-style-type: square;
+            /* 各标志使用一个图像 */
+            /* list-style-image: url("/w3school/flag.jpg"); */
+            /* 标志出现在列表项内容之外还是内容内部 */
+            list-style-position: inside;
+        }
+
+        table,
+        th,
+        td {
+            /* 设置蓝色边框 */
+            border: 1px solid blue;
+            /* 置是否将表格边框折叠为单一边框 */
+            border-collapse: collapse;
+            text-align: center;
+            padding: 10px;
+            background-color: greenyellow;
+        }
+
+        /* 边框属性 */
+        #p5 {
+            outline-color: red;
+            outline-style: dotted;
+            outline-width: thin;
+        }
+
+        /* 内边距、外边距、边框 */
+        #p6 {
+            background: gray;
+
+            /* 分别设置内边框的宽度 */
+            padding-top: 10px;
+            padding-right: 0.25em;
+            padding-bottom: 2ex;
+            padding-left: 10%;
+
+            border: red solid 1px;
+
+            /* 外边框，顺序是top right bottom left */
+            margin: 10px 0px 15px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1">字体颜色、背景颜色、内边距、文本属性类。hello hello</p>
+    <p id="p2">背景图片</p>
+    <div id="div1">
+        <p id="p3">文本属性：首行缩进</p>
+    </div>
+    <p id="p4">字体属性类 hello hello</p>
+    <a href="https://www.baidu.com">这是一个连接的属性类</a>
+    <ul>
+        <li>条目1</li>
+        <li>条目2</li>
+    </ul>
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+        </tr>
+        <tr>
+            <td>小明</td>
+            <td>男</td>
+        </tr>
+        <tr>
+            <td>小花</td>
+            <td>女</td>
+        </tr>
+    </table>
+    <p id="p5">边框轮廓</p>
+    <p id="p6">内边距、外边距、边框</p>
+</body>
+
+</html>

@@ -4,7 +4,9 @@
 <head>
     <title>网页的title</title>
     <meta charset="utf-8" content="text/html" />
+    <!-- 外部样式表：当样式需要应用于很多页面时，外部样式表将是理想的选择。 -->
     <link href="index.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <!-- 内部样式表：当单个文档需要特殊的样式时，就应该使用内部样式表。 -->
     <style type="text/css">
         /*类选择器*/
         .address {
@@ -30,9 +32,10 @@
 
 <body>
     <div>这是一个部分</div>
+    <!-- 内联样式：由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。请慎用这种方法，例如当样式仅需要在一个元素上应用一次时。 -->
     <h1 style="background-color: #f00">这是1级标题</h1>
-    <h2 id="h2">这是2级标题</h2>
-    <h3 style="text-align: center">这是3级标题</h3>
+    <h2 id="h2" class="center">这是2级标题</h2>
+    <h3 class="center">这是<strong>3级标题</strong></h3>
     <hr />
     <p id="p1">这是段落1</p>
     <form>
@@ -55,7 +58,7 @@
         </li>
         <li>蔬菜
             <ul>
-                <li>白菜</li>
+                <li><strong>白菜</strong></li>
                 <li>油菜</li>
                 <li>卷心菜</li>
             </ul>
@@ -74,6 +77,19 @@
             </ul>
         </li>
     </ul>
+    <table border="1">
+        <tr>
+            <td class="fancy">
+                列名1
+            </td>
+            <td class="fancy">
+                列名2
+            </td>
+        </tr>
+        <tr>
+            <td>数据1</td>
+        </tr>
+    </table>
     <b>这是粗体字</b>
     <br />
     <i>这是斜体字</i>
@@ -103,7 +119,7 @@
         <input type="submit" name="submit" value="提交" />
     </form>
     <br />
-    <form>
+    <form id="form1">
         你是否喜欢旅游？
         <br />
         <input type="radio" name="radiolove" value="喜欢">喜欢</input>

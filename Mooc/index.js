@@ -1,11 +1,11 @@
 console.log("哈哈哈");
 // alert("hello");
-var like = confirm("你喜欢现在的生活吗？");
+/* var like = confirm("你喜欢现在的生活吗？");
 if (like == true) {
     alert("很好，加油！");
 } else {
     alert("是时候做些改变了！");
-}
+} */
 
 // var name = prompt("请输入你的姓名", "姓名是什么");
 // if (name == null) {
