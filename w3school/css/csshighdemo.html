@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css高级demo</title>
+    <style type="text/css">
+        /* 对齐元素时，对 <body> 元素的外边距和内边距进行预定义，这样可以避免在不同的浏览器中出现可见的差异。 */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 水平对齐：使用margin属性(auto)  */
+        .center {
+            margin: auto;
+            width: 50%;
+            background-color: salmon;
+        }
+
+        /* 左右对齐：使用position属性(absolute) */
+        /* position属性规定元素的定位类型。
+        absolute	生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
+        fixed	生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
+        relative	生成相对定位的元素，相对于其正常位置进行定位。因此，"left:20" 会向元素的 LEFT 位置添加 20 像素。
+        static	默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。
+        inherit	规定应该从父元素继承 position 属性的值。 */
+
+        .right {
+            position: absolute;
+            right: 0px;
+            width: 30%;
+            background-color: salmon;
+        }
+
+        /* 左右对齐：使用float属性 */
+        .left {
+            float: left;
+            width: 30%;
+            background-color: salmon;
+        }
+
+        /* display属性：规定元素应该生成的框的类型。 
+        none	此元素不会被显示。
+        block	此元素将显示为块级元素，此元素前后会带有换行符。
+        inline	默认。此元素会被显示为内联元素，元素前后没有换行符。
+        inline-block	行内块元素。（CSS2.1 新增的值）
+        list-item	此元素会作为列表显示。*/
+        #display {
+            margin-top: 100px;
+            display: block;
+        }
+
+        /* float 属性定义元素在哪个方向浮动 */
+
+        /* 段落的首字母浮动于左侧：文本的第一个字母包含在一个 span 元素中。span 元素的字体尺寸是 400%，行高是 80%。 */
+        #wordspan {
+            float: left;
+            font-size: 300%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 80%;
+        }
+
+        /* 图片浮动于浮动于右侧：div 元素的宽度是 120 像素，它其中包含图像。div 元素浮动到右侧。我们向 div 元素添加了外边距，这样就可以把 div 推离文本。同时，我们还向 div 添加了边框和内边距。 */
+        #divimg {
+            float: right;
+            margin: 0px, 0px, 15px, 20px;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        /* visibility 属性规定元素是否可见。即使不可见的元素也会占据页面上的空间。请使用 "display" 属性来创建不占据页面空间的不可见元素。
+        visible	默认值。元素是可见的。
+        hidden	元素是不可见的。 */
+        #visible {
+            visibility: visible;
+        }
+
+        /* 以下ul部分是导航栏的demo */
+
+        /* list-style-type:none - 删除圆点。导航栏不需要列表项标记。把外边距和内边距设置为 0 可以去除浏览器的默认设定。 */
+        ul {
+            list-style-type: none;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        /* display:inline; - 默认的，<li> 元素是块元素。在这里，我们去除了每个列表项前后的换行，以便让它们在一行中显示。 */
+        ul li {
+            display: inline;
+        }
+
+        li a {
+            float: left;
+            width: 100px;
+        }
+
+        li a:link,
+        li a:visited {
+            font-weight: bold;
+            color: white;
+            background-color: turquoise;
+            text-align: center;
+            padding: 5px;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: inline;
+        }
+
+        li a:hover,
+        li a:active {
+            background-color: violet;
+        }
+
+        /* 可以为图片设置透明度：使用属性 opacity 来设定透明度。opacity 属性能够设置的值从 0.0 到 1.0。值越小，越透明。 */
+        #alpha {
+            opacity: 0.4;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <p>这是段落1</p>
+    </div>
+    <br />
+    <div class="right">
+        <p>这是段落2</p>
+    </div>
+    <br />
+    <div class="left">
+        <p>这是段落3</p>
+    </div>
+    <span id="display">display属性的使用</span>
+
+    <div id="divimg">
+        <img src="../flag.jpg" />
+    </div>
+
+    <p><span id="wordspan">这</span>是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，
+        这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，
+        这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，
+        这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本，这是一些文本</p>
+
+    <p id="visible">可见与不可见</p>
+
+    <ul>
+        <li><a href="https:www.baidu.com">首页</a></li>
+        <li><a href="https:www.baidu.com">新闻</a></li>
+        <li><a href="https:www.baidu.com">联系方式</a></li>
+        <li><a href="https:www.baidu.com">关于</a></li>
+    </ul>
+    <br />
+    <br />
+    <img id="alpha" src="../flag.jpg" />
+</body>
+
+</html>

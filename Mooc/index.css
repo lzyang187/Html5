@@ -30,12 +30,18 @@ li strong {
     background-color: aqua;
 }
 
+/* 多类选择器：选择同时包含这些类名的元素，也就是必须是元素class集合的子集 */
+.important.warning {
+    font-weight: bold;
+    font-style: italic;
+}
+
 /*后代选择器：作用于所有子后代元素*/
 .animal li {
     border: 1px solid green;
 }
 
-/*子代选择器：用于选择指定标签元素的第一代子元素*/
+/*子代选择器：用于选择指定标签元素的第一代子元素：大于号（子结合符）*/
 .food>li {
     border: 1px solid red;
 }
@@ -79,6 +85,16 @@ input[type = "text"] {
 input[type = "password"] {
     color: yellowgreen;
     font-size: large;
+}
+
+/* 多属性选择器：根据多个属性进行选择，只需将属性选择器链接在一起即可 */
+a[title][href] {
+    color: rebeccapurple;
+}
+
+/* 相邻兄弟选择器：读作：“选择紧接在 h4 元素后出现的段落，h4 和 p 元素拥有共同的父元素”。 */
+h4 + p {
+    text-indent: 30px;
 }
 
 

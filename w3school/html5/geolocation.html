@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取地理位置</title>
+</head>
+
+<body>
+    <button onclick="getLocation()">展示地理位置</button>
+    <p id="location"></p>
+    <p id="watch"></p>
+
+    <script type="text/javascript">
+
+        var p = document.getElementById("location");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+
+                // 返回用户的当前位置，并继续返回用户移动时的更新位置
+                navigator.geolocation.watchPosition(watch);
+            } else {
+                p.innerHTML = "此浏览器不支持定位"
+            }
+        }
+
+        function showPosition(position) {
+            p.innerHTML = "纬度：" + position.coords.latitude + "   经度：" + position.coords.longitude + " 位置精度：" + position.coords.accuracy +
+                "   海拔：" + position.coords.altitude + "  速度：" + position.coords.speed;
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    p.innerHTML = "用户拒绝定位权限";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    p.innerHTML = "位置信息不可用";
+                    break
+                case error.Timeout:
+                    p.innerHTML = "获取位置信息超时";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    p.innerHTML = "未知错误";
+                    break
+            }
+        }
+
+        function watch(position) {
+            var watch = document.getElementById("watch");
+            watch.innerHTML = "Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude;
+        }
+
+    </script>
+
+</body>
+
+</html>

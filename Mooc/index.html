@@ -13,7 +13,7 @@
             color: blueviolet
         }
 
-        div {
+        #div1 {
             font-family: "Microsoft Yahei";
             color: #f00;
             font-size: 20px;
@@ -22,20 +22,19 @@
             text-decoration: underline;
             text-decoration: line-through;
         }
-
-        p {
-            line-height: 1.5em;
-            letter-spacing: 5px;
-        }
     </style>
 </head>
 
 <body>
-    <div>这是一个部分</div>
+    <div id="div1">这是一个部分</div>
     <!-- 内联样式：由于要将表现和内容混杂在一起，内联样式会损失掉样式表的许多优势。请慎用这种方法，例如当样式仅需要在一个元素上应用一次时。 -->
     <h1 style="background-color: #f00">这是1级标题</h1>
     <h2 id="h2" class="center">这是2级标题</h2>
     <h3 class="center">这是<strong>3级标题</strong></h3>
+    <div>
+        <h4>这是4级标题</h4>
+        <p>紧跟在h4后的p</p>
+    </div>
     <hr />
     <p id="p1">这是段落1</p>
     <form>
@@ -141,6 +140,7 @@
         </select>
     </form>
     <br />
+    <p class="important warning">这是类即重要又提醒的的段落</p>
     <address class="address">李朝阳 写于2019-7-16</address>
 
     <script src="index.js" type="text/javascript"></script>
