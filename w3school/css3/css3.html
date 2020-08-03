@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css3的新属性</title>
+    <style type="text/css">
+        #radius {
+            border: 1px solid gray;
+            border-radius: 25px;
+        }
+
+        #shadow {
+            text-align: center;
+            margin-top: 10px;
+            width: 200px;
+            height: 100px;
+            background: yellow;
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        div #div1,
+        #div2 {
+            border: 1px solid black;
+            padding: 35px;
+            background: url(border.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        #div1 {
+            background-origin: border-box;
+        }
+
+        #div2 {
+            background-origin: content-box;
+        }
+
+        h1 {
+            /* 水平阴影、垂直阴影、模糊距离，以及阴影的颜色： */
+            text-shadow: 5px 5px 5px #FF0000;
+        }
+
+        h2 {
+            border: 1px solid gray;
+            width: 150px;
+            /* 允许对长单词进行拆分，并换行到下一行： */
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="radius">圆角的按钮</button>
+    <br />
+    <div id="shadow">边框阴影</div>
+
+    <p>background-origin:border-box:</p>
+    <div id="div1">
+        这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+        这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+        这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+    </div>
+
+    <p>background-origin:content-box:</p>
+    <div id="div2">
+        这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+        这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+        这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。这是文本。
+    </div>
+
+    <h1>文本阴影效果</h1>
+
+    <h2>This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and
+        wrap to the next line.</h2>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画demo</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            animation: myfirst 5s;
+            /* Firefox */
+            -moz-animation: myfirst 5s;
+            /* Safari and Chrome */
+            -webkit-animation: myfirst 5s;
+            /* Opera */
+            -o-animation: myfirst 5s;
+        }
+
+        @keyframes myfirst {
+            from {
+                background: red;
+            }
+
+            to {
+                background: yellow;
+            }
+        }
+
+        /* Firefox */
+        @-moz-keyframes myfirst {
+            from {
+                background: red;
+            }
+
+            to {
+                background: yellow;
+            }
+        }
+
+        /* Safari and Chrome */
+        @-webkit-keyframes myfirst {
+            from {
+                background: red;
+            }
+
+            to {
+                background: yellow;
+            }
+        }
+
+        /* Opera */
+        @-o-keyframes myfirst {
+            from {
+                background: red;
+            }
+
+            to {
+                background: yellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

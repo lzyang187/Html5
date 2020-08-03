@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户界面</title>
+    <style>
+        /* resize 属性规定是否可由用户调整元素尺寸。 */
+        p {
+            width: 100px;
+            height: 50px;
+            border: 1px solid gray;
+            resize: both;
+            overflow: auto;
+        }
+
+        .container {
+            width: 100px;
+            height: 50px;
+            background-color: gray;
+        }
+
+        .box {
+            width: 50%;
+            background-color: honeydew;
+            border: 1px solid red;
+            /* 规定两个并排的带边框方框： */
+            box-sizing: border-box;
+            /* Firefox */
+            -moz-box-sizing: border-box;
+            /* Safari */
+            -webkit-box-sizing: border-box;
+            float: left;
+        }
+
+        /* outline-offset 属性对轮廓进行偏移，并在超出边框边缘的位置绘制轮廓。轮廓与边框有两点不同：
+            轮廓不占用空间
+            轮廓可能是非矩形 */
+
+        #outline {
+            margin: 20px;
+            margin-top: 100px;
+            width: 150px;
+            padding: 10px;
+            height: 70px;
+            border: 2px solid black;
+            outline: 2px solid red;
+            outline-offset: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>可以由用户调整大小</p>
+    <div id="container">
+        <div class="box">这个div占据左半部分</div>
+        <div class="box">这个div占据右半部分</div>
+    </div>
+    <div id="outline">带有轮廓的div</div>
+</body>
+
+</html>

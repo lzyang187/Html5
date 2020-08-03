@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单输入类型</title>
+</head>
+
+<body>
+
+    <!-- email 类型：提交表单时，会自动验证 email 域的值 -->
+    <!-- autocomplete 属性规定 form 或 input 域应该拥有自动完成功能。 -->
+    <!-- required 属性规定必须在提交之前填写输入域（不能为空）。 -->
+    <form action="" method="GET" autocomplete="on" required="true">E-mail：
+        <input type="email" name="user_email" />
+        <br />
+        <input type="submit" />
+    </form>
+
+    <!-- url 类型：在提交表单时，会自动验证 url 域的值。 -->
+    <form>url:
+        <input type="url" />
+        <br />
+        <input type="submit" />
+    </form>
+
+    <!-- number 类型：用于应该包含数值的输入域。您还能够设定对所接受的数字的限定；可以设置默认值 -->
+    <form>数字：
+        <input type="number" min="1" max="100" value="10" />
+        <br />
+        <input type="submit" />
+    </form>
+
+    <!-- range 类型：用于应该包含一定范围内数字值的输入域。range 类型显示为滑动条。 -->
+    <form>数字：
+        <input type="range" min="1" max="100" value="10" />
+        <br />
+        <input type="submit" />
+    </form>
+
+    <!--    date - 选取日、月、年
+            month - 选取月、年
+            week - 选取周和年
+            time - 选取时间（小时和分钟）
+            datetime - 选取时间、日、月、年（UTC 时间）
+            datetime-local - 选取时间、日、月、年（本地时间） -->
+    <form>日期
+        <input type="date" />
+        <input type="week" />
+        <input type="datetime-local" />
+        <br />
+        <input type="submit" />
+    </form>
+
+    <!-- search 类型用于搜索域，比如站点搜索或 Google 搜索。 search 域显示为常规的文本域。-->
+    <!-- pattern 属性规定用于验证 input 域的模式（pattern）。正则表达式：显示了一个只能包含三个字母的文本域（不含数字及特殊字符） -->
+    <!-- placeholder 属性提供一种提示（hint） -->
+    <!-- autofocus 属性规定在页面加载时，域自动地获得焦点。 -->
+    <form>搜索
+        <input type="search" pattern="[A-z]{3}" placeholder="请输入三个字母" autofocus="autofocus" />
+        <br />
+        <input type="submit" />
+    </form>
+
+    <!-- multiple 属性规定输入域中可选择多个值。这里可以选择多个文件 -->
+    <form>请选择文件
+        <input type="file" multiple />
+        <br />
+        <input type="reset">
+    </form>
+
+</body>
+
+</html>

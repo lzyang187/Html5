@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web worker 是运行在后台的 JavaScript，不会影响页面的性能。</title>
+</head>
+
+<body>
+    <p id="p">当在 HTML 页面中执行脚本时，页面的状态是不可响应的，直到脚本已完成。<br />
+        web worker 是运行在后台的 JavaScript，独立于其他脚本，不会影响页面的性能。您可以继续做任何愿意做的事情：点击、选取内容等等，而此时 web worker 在后台运行。</p>
+    <button onclick="start()">开始计数</button>
+    <button onclick="stop()">结束计数</button>
+
+    <script type="text/javascript">
+
+        var worker;
+
+        function start() {
+            // 检测 Web Worker 支持
+            if (typeof ("Worker") !== "undefined") {
+
+                if (typeof (worker) == "undefined") {
+                    worker = new Worker("demoworker.js");
+                }
+                // 向 web worker 添加一个 "onmessage" 事件监听器：当 web worker 传递消息时，会执行事件监听器中的代码。event.data 中存有来自 event.data 的数据。
+                worker.onmessage = function (event) {
+                    document.getElementById("p").innerHTML = event.data;
+                }
+            } else {
+                document.getElementById("p").innerHTML = "浏览器不支持web worker"
+            }
+        }
+
+        function stop() {
+            worker.terminate();
+        }
+
+        /* 由于 web worker 位于外部文件中，它们无法访问下例 JavaScript 对象：
+            window 对象
+            document 对象
+            parent 对象 */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服务器发送事件</title>
+</head>
+
+<body>
+    <p id="p">Server-Sent 事件 - 单向消息传递。Server-Sent 事件指的是网页自动获取来自服务器的更新。</p>
+
+    <script type="text/javascript">
+
+        if (typeof (EventSource) !== "undefined") {
+
+            document.getElementById("p").innerHTML = "浏览器支持server-sent 事件";
+
+            var source = new EventSource("demosse.php");
+
+            source.onopen = function (event) {
+                document.getElementById(p).innerHTML = "通往服务器的连接被打开";
+            };
+
+            /* 每接收到一次更新，就会发生 onmessage 事件。当 onmessage 事件发生时，把已接收的数据追加到 id 为 "p" 的元素中 */
+            source.onmessage = function (event) {
+                document.getElementById(p).innerHTML += event.data + "<br/>";
+            };
+
+            source.onerror = function (error) {
+                document.getElementById("p").innerHTML = "发生错误";
+            };
+        } else {
+            document.getElementById("p").innerHTML = "浏览器不支持 server-sent 事件";
+        }
+
+    </script>
+</body>
+
+</html>
