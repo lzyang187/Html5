@@ -16,9 +16,9 @@ console.log(x);
 console.log(x.indexOf("故乡"));
 // 第二个参数是检索的起始位置
 console.log(x.indexOf("故乡", 10));
-// 这里主义转义字符的长度
+// 这里注意转义字符的长度
 console.log(x.lastIndexOf("中国"));
-// lastIndexOf() 方法向后进行检索（从尾到头），这意味着：假如第二个参数是 50，则从位置 50 开始检索，直到字符串的起点。
+// lastIndexOf() 方法向前进行检索（从尾到头），这意味着：假如第二个参数是 50，则从位置 50 开始检索，直到字符串的起点。
 console.log(x.lastIndexOf("中国", 10));
 // 与indexOf的区别：search()方法无法设置第二个开始位置参数；indexOf() 方法无法设置更强大的搜索值（正则表达式）。
 console.log(x.search("瓷器"));
