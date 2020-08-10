@@ -9,7 +9,7 @@
 <body onload="onLoad()">
     <input type="button" value="点击事件" onclick="onClick()" name="按钮名" />
     <br />
-    <p onmouseover="onMouseOver()">鼠标经过事件</p>
+    <p onmouseover="onMouseOver()" onmousedown="onMouseDown()" onmouseup="onMouseUp()">鼠标经过事件</p>
     <a href="https:www.baidu.com" onmouseout="onMouseOut()">鼠标离开事件</a>
     <br />
     <input type="text" value="请输入姓名" onfocus="onFocus()" onblur="onBlur()" />
@@ -29,8 +29,17 @@
     function onClick() {
         confirm("按钮被点击了")
     }
+
     function onMouseOver() {
         confirm("鼠标经过了")
+    }
+
+    function onMouseDown() {
+        alert("鼠标按下了");
+    }
+
+    function onMouseUp() {
+        alert("鼠标松开了");
     }
 
     function onMouseOut() {
@@ -56,7 +65,6 @@
     function onLoad() {
         alert("页面加载中...")
     }
-
 </script>
 
 </html>

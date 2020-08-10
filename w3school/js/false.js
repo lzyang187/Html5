@@ -28,13 +28,13 @@ x = "0";
 switch (x) {
     case 0:
         console.log("匹配到0");
-        break
+        break;
     case 1:
         console.log("匹配到1");
-        break
+        break;
     default:
         console.log("匹配到default");
-        break
+        break;
 }
 
 

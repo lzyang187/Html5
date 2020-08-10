@@ -26,7 +26,7 @@ console.log("反转后的数组：" + reverseArr);
 // 从开始参数选取元素，直到结束参数（不包括）为止
 var sliceArr = reverseArr.slice(1, 3);
 console.log("裁剪后的数组：" + sliceArr);
-sliceArr = reverseArr.slice(1)
+sliceArr = reverseArr.slice(1);
 console.log("裁剪后的数组：" + sliceArr);
 
 var myArr3 = ["a", "b", "c", "d", "e"];
@@ -36,7 +36,7 @@ var removeArray = myArr3.splice(1, 2, "x", "y", "z");
 console.log("被移除的数组：" + removeArray);
 console.log("移除操作后的数组：" + myArr3);
 // splice通过聪明的参数设定，可以用来移除元素
-myArr3.splice(1, 1)
+myArr3.splice(1, 1);
 console.log(myArr3);
 
 var intArr = new Array(5, 20, 16, 80, 50);

@@ -15,7 +15,7 @@ console.log("0.1 + 0.2 = " + z);
 var person = {
     fName: "tom",
     age: 18
-}
+};
 console.log("对象使用命名索引：" + person.fName);
 // 会出错
 console.log("对象使用数字索引：" + person[0]);

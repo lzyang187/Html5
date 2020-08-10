@@ -52,7 +52,7 @@ var counter = {
     get countValue() {
         return this.count;
     }
-}
+};
 
 counter.reset;
 counter.increment;
@@ -79,7 +79,7 @@ console.log("构造器构造的boy：" + lbj.name);
 // 向tom中添加方法
 tom.info = function () {
     return this.name + " " + this.age;
-}
+};
 console.log("添加的方法：" + tom.info());
 
 
@@ -87,5 +87,5 @@ console.log("添加的方法：" + tom.info());
 Boy.prototype.county = "China";
 Boy.prototype.showFun = function () {
     return this.name + " " + this.county;
-}
+};
 console.log("prototype：" + tom.showFun());
