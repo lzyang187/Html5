@@ -19,7 +19,7 @@
             background-color: salmon;
         }
 
-        /* 左右对齐：使用position属性(absolute) */
+        /* 层模型：使用position属性 */
         /* position属性规定元素的定位类型。
         absolute	生成绝对定位的元素，相对于 static 定位以外的第一个父元素进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
         fixed	生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。
@@ -34,7 +34,7 @@
             background-color: salmon;
         }
 
-        /* 左右对齐：使用float属性 */
+        /* 浮动模型：使用float属性 */
         .left {
             float: left;
             width: 30%;
@@ -45,7 +45,7 @@
         none	此元素不会被显示。
         block	此元素将显示为块级元素，此元素前后会带有换行符。
         inline	默认。此元素会被显示为内联元素，元素前后没有换行符。
-        inline-block	行内块元素。（CSS2.1 新增的值）
+        inline-block	行内块元素。（CSS2.1 新增的值）特点：1、和其他元素都在一行上；2、元素的高度、宽度、行高以及顶和底边距都可设置。
         list-item	此元素会作为列表显示。*/
         #display {
             margin-top: 100px;
@@ -113,10 +113,83 @@
             background-color: violet;
         }
 
+        #container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            left: 30px;
+            border: 1px solid red;
+        }
+
         /* 可以为图片设置透明度：使用属性 opacity 来设定透明度。opacity 属性能够设置的值从 0.0 到 1.0。值越小，越透明。 */
+        /* 已知宽高实现盒子水平垂直居中：父元素设置相对定位,子元素设置绝对定位,那么子元素就是相对于父元素定位 用positon、left、top、margin-top、margin-left使图片在父布局居中*/
         #alpha {
             opacity: 0.4;
             border: 1px solid black;
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 50%;
+            top: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
+
+        #txt1 {
+            position: absolute;
+            bottom: 0px;
+            width: 90%;
+        }
+
+        #txt2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* translate位移,给上和左都位移-50%距离，就能达到垂直水平居中的效果 */
+            transform: translate(-50%, -50%);
+        }
+
+        #box {
+            background-color: blue;
+            height: 200px;
+            /* display: flex属性可以把块级元素在一排显示。flex需要添加在父元素上，改变子元素的排列顺序。默认为从左往右依次排列,且和父元素左边没有间隙。 */
+            display: flex;
+            /* justify-content定义了项目在主轴上的对齐方式 
+            flex-start：交叉轴的起点对齐
+            flex-end：右对齐
+            center：居中 
+            space-between：两端对齐，项目之间的间隔都相等
+            space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。*/
+            justify-content: space-around;
+            /* align-items属性设置纵轴排列方式
+            flex-start：默认值，上对齐
+            flex-end：下对齐
+            center：中间对齐
+            baseline：项目的第一行文字的基线对齐。
+             */
+            align-items: flex-end;
+        }
+
+        .box1 {
+            background-color: red;
+            height: 50px;
+            width: 50px;
+            /* 给子元素设置flex占父元素比例 */
+            flex: 1;
+        }
+
+        .box2 {
+            background-color: yellow;
+            height: 50px;
+            width: 50px;
+            flex: 2;
+        }
+
+        .box3 {
+            background-color: green;
+            height: 50px;
+            width: 50px;
+            flex: 3;
         }
     </style>
 </head>
@@ -154,7 +227,17 @@
     </ul>
     <br />
     <br />
-    <img id="alpha" src="../flag.jpg" />
+    <div id="container">
+        <img id="alpha" src="../flag.jpg" />
+        <div id="txt1">这是位于图片中底部区域的文字</div>
+        <div id="txt2">居中的文字</div>
+    </div>
+
+    <div id="box">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
 </body>
 
 </html>

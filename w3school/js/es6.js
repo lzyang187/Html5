@@ -53,9 +53,9 @@ console.log("isNaN(10 / 0) = " + isNaN(10 / 0));
 // ES5
 var x = function (x, y) {
     return x * y;
-}
+};
 
 // ES6
-const x = (x, y) => x * y;
+const y = (x, y) => x * y;
 
 

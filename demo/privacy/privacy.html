@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私协议</title>
+    <link href="../common.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <style>
+        ul.no_indent {
+            text-indent: -2em;
+            list-style-type: none;
+        }
+
+        ul.no_indent_inner {
+            text-indent: -4em;
+            list-style-type: none;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1><span class="app_name">酷音铃声</span>隐私政策</h1>
+    <p>更新日期：2020年7月18日</p>
+    <p class="bold">特别提示：《<span
+            class="app_name">酷音铃声</span>隐私政策》（以下简称“本政策”）仅适用于科大讯飞股份有限公司（以下简称“科大讯飞”、“讯飞”或“我们”）为您提供的<span
+            class="app_name">酷音铃声</span>产品</p>
+    <p>本政策将帮助您了解以下内容：</p>
+    <ol>
+        <li>定义与解释</li>
+        <li>我们如何收集并使用您的个人信息</li>
+    </ol>
+
+    <h2>一、定义与解释</h2>
+    <ol>
+        <li><span class="app_name">酷音铃声</span>产品与服务：包括<span class="app_name">酷音铃声</span>App、<span
+                class="app_name">酷音铃声</span>官方网站<a href="https://www.diyring.cc">https://www.diyring.cc</a>所提供的的服务</li>
+        <li>账号：指您完成真实信息注册后享有的用户账号，该用户账号由您负责保管。您将对你账号下的所有行为负法律责任</li>
+    </ol>
+
+    <h2>二、我们如何收集和使用您的个人信息</h2>
+
+    <h3>1、向您提供产品服务过程中您主动提供的个人信息</h3>
+    <ul class="no_indent">
+        <li>1.1 为实现我们的基本业务功能</li>
+        <ul class="no_indent_inner">
+            <li>（1）为方便注册<span class="app_name">酷音铃声</span>账户</li>
+            <li>（2）为了向您提供更换头像、发表评论和分享</li>
+        </ul>
+        <li>1.2 为了向您提供更优质的产品服务，我们可能需要收集以下信息</li>
+    </ul>
+    <p>为便于您进一步明晰本软件的权限调用涉及您的个人信息，我们将权限申请整理如下：</p>
+    <table>
+        <thead>
+            <tr>
+                <td>系统权限</td>
+                <td>对应业务功能</td>
+                <td>调用目的</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>更改WiFi状态</td>
+                <td>铃声下载</td>
+                <td>开启WiFi，节省流量</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>2、向您提供产品或服务过程中我们主动收集的个人信息</h3>
+    <ul class="no_indent">
+        <li>2.1 设备信息</li>
+        <p>当您使用<span class="app_name">酷音铃声</span>产品或服务时</p>
+        <li>2.2 日志信息</li>
+        <p>当您使用<span class="app_name">酷音铃声</span>产品或服务时</p>
+    </ul>
+
+    <h3>3、我们从第三方获取的您的个人信息</h3>
+    <p>如果您使用第三方账号（微信、QQ、微博）登录<span class="app_name">酷音铃声</span></p>
+
+    <h2>三、我们如何使用Cookie技术</h2>
+    <p>我们可能通过cookie收集和使用您的信息，并用于以下用途</p>
+    <ul class="no_indent">
+        <li>（1）记住您的身份</li>
+        <li>（2）分析使用我们服务的情况</li>
+        <li>（3）推送优化</li>
+    </ul>
+    <p>我们为上述目的使用cookie的同时，可能将通过cookie收集的非个人身份信息。</p>
+    <p>您可以通过浏览器设置拒绝或管理cookie及同类技术。</p>
+
+    <script>
+        var app_name = getAppName();
+        if (!app_name) {
+            app_name = "酷音铃声";
+        }
+        var list = document.getElementsByClassName("app_name");
+        var i = 0;
+        for (i in list) {
+            list[i].innerHTML = app_name;
+        }
+
+        // 获取url中的应用名参数
+        function getAppName() {
+            var query = window.location.search.substring(1);
+            var params = query.split("&");
+            var i = 0;
+            for (i in params) {
+                var pars = params[i].split("=");
+                if (pars[0] == "appName") {
+                    return pars[1];
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

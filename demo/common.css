@@ -1,0 +1,12 @@
+body {
+    background-color: white;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}

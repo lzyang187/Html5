@@ -1,9 +1,10 @@
 /** 派生选择器：通过依据元素在其位置上的上下文关系来定义样式 */
 li strong {
-    font-style: italic; 
+    font-style: italic;
     font-weight: normal;
     color: #f00;
 }
+
 /** 上面的例子只有 li 元素中的 strong 元素的样式为斜体字，无需为 strong 元素定义特别的 class 或 id，代码更加简洁 */
 
 
@@ -51,11 +52,13 @@ td.fancy {
     color: aquamarine;
     background: black;
 }
+
 /** 上例中类名为 fancy 的 td 标签元素样式会改变，没有被分配名为 fancy 的类的 td 不会受这条规则的影响。
 值得注意的是：任何其他被标注为 fancy 的元素也不会受这条规则的影响，效果限制在被标注为 fancy 的 td 元素 */
 
 
-/*伪类选择器：html中一个标签元素的鼠标滑过的状态来设置字体颜色*/
+/*伪类选择器：html中一个标签元素的鼠标滑过的状态来设置字体颜色
+因为它允许给html不存在的标签（标签的某种状态）设置样式，所以称为伪类选择器*/
 a:hover {
     color: #f0f;
 }
@@ -72,17 +75,17 @@ a:hover {
     color: blue;
 }
 
-[title = "世界贸易组织"] {
+[title="世界贸易组织"] {
     color: red;
 }
 
 /** 属性选择器在为不带有 class 或 id 的表单设置样式时特别有用 */
-input[type = "text"] {
+input[type="text"] {
     width: 200px;
     background-color: yellow;
 }
 
-input[type = "password"] {
+input[type="password"] {
     color: yellowgreen;
     font-size: large;
 }
@@ -93,8 +96,8 @@ a[title][href] {
 }
 
 /* 相邻兄弟选择器：读作：“选择紧接在 h4 元素后出现的段落，h4 和 p 元素拥有共同的父元素”。 */
-h4 + p {
+h4+p {
     text-indent: 30px;
 }
 
-
+/* 选择器的优先级依次是: 内联样式 > id选择器 > 类选择器 > 标签选择器 > 通配符选择器 */
