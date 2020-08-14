@@ -16,6 +16,13 @@ tagList[0].append("+通过tag查找");
 var selectorList = document.querySelectorAll("p.p1class");
 selectorList[0].append("+通过css选择器查找");
 
+/* DOM对象的属性部分 */
+console.log("p1的父节点：");
+console.log(p1.parentNode);
+console.log("p1第一个属性的值：");
+console.log(p1.attributes[0].nodeValue);
+console.log("p1父节点的子节点列表：");
+console.log(p1.parentNode.childNodes);
 
 /** 以下是修改类 */
 
@@ -41,9 +48,11 @@ function click2() {
 p1.removeEventListener("click", click1);
 
 
-// 添加一个段落
+// 创建元素节点：添加一个段落
 var newP = document.createElement("p");
+// 创建文本节点
 var newNode = document.createTextNode("这是添加的新段落");
+// 把新的子节点添加到指定节点
 newP.appendChild(newNode);
 var body = document.getElementsByTagName("body")[0];
 body.appendChild(newP);
@@ -52,4 +61,6 @@ body.appendChild(newP);
 body.removeChild(document.getElementById("a1Id"));
 
 // 替换一个元素
-// body.replaceChild(newP, p1);
+var p2 = document.getElementById("p2Id");
+// newP.setAttribute("")
+body.replaceChild(newP, p2);

@@ -32,7 +32,7 @@ console.log("总和：" + sum(1, 2, 3, 4, 5, 6));
 
 /* 自调用函数：函数表达式会自动执行，假如表达式后面跟着 () */
 (function self() {
-    console.log("我是自调用函数，会自动被调用")
+    console.log("我是自调用函数，会自动被调用");
 })();
 
 
@@ -42,12 +42,12 @@ var person = {
     fullName: function (city) {
         return this.firstName + this.lastName + city;
     }
-}
+};
 
 var person1 = {
     firstName: "jerry",
     lastName: ",james"
-}
+};
 
 /* 
 call() 方法是预定义的 JavaScript 方法。
@@ -75,7 +75,7 @@ var add = (function () {
     return function () {
         // 最“精彩的”部分是它能够访问父作用域中的counter。
         return counter += 1;
-    }
+    };
 })();
 // counter被这个匿名函数(add)的作用域保护，并且只能使用 add 函数来修改。
 add();

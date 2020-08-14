@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态修改表格demo</title>
+    <link href="common.css" type="text/css" rel="stylesheet" />
+    <style>
+        table,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>学生姓名</td>
+                <td>分数</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+
+        <tbody id="tbody">
+            <tr>
+                <td>张三</td>
+                <td>60</td>
+                <td onclick="del(this)">删除</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button onclick="addRow()">增加一列</button>
+
+    <script>
+        window.onload = function () {
+            var tds = document.getElementsByTagName("td");
+            for (var i in tds) {
+                changeBg(tds[i]);
+            }
+        }
+
+        function changeBg(obj) {
+            obj.onmouseover = function () {
+                obj.style.backgroundColor = "#00ff00";
+            }
+            obj.onmouseout = function () {
+                obj.style.backgroundColor = "#ffffff";
+            }
+        }
+
+        var tbody = document.getElementById("tbody");
+
+        var count = 1;
+
+        function addRow() {
+            count++;
+            var newTr = document.createElement("tr");
+
+            var td1 = document.createElement("td");
+            td1.innerHTML = "姓名" + count;
+            changeBg(td1);
+            td1.onclick = function () {
+                var name = prompt("请输入姓名");
+                if (name) {
+                    td1.innerHTML = name;
+                } else {
+                    alert("姓名不能为空")
+                }
+            }
+            newTr.appendChild(td1);
+
+            var td2 = document.createElement("td");
+            td2.innerHTML = count;
+            changeBg(td2);
+            td2.onclick = function () {
+                var score = prompt("请输入分数");
+                if (score) {
+                    td2.innerHTML = score;
+                } else {
+                    alert("分数不能为空");
+                }
+            }
+            newTr.appendChild(td2);
+
+            var td3 = document.createElement("td");
+            td3.innerHTML = "删除"
+            changeBg(td3);
+            td3.onclick = function () {
+                tbody.removeChild(newTr);
+            };
+            newTr.appendChild(td3);
+
+            tbody.appendChild(newTr);
+        }
+
+        function del(td) {
+            console.log(td.parentNode);
+            tbody.removeChild(td.parentNode);
+        }
+    </script>
+</body>
+
+</html>

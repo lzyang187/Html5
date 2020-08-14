@@ -35,9 +35,13 @@
         全局函数是 window 对象的方法。
         甚至（HTML DOM 的）document 对象也是 window 对象属性： */
 
-        // window.alert("alert信息");
-        // window.prompt("prompt信息");
-        // window.confirm("confirm信息");
+        // 三种弹框
+        var result = window.confirm("confirm信息");
+        if (result == true) {
+            var info = window.prompt("prompt信息", "默认填入的信息");
+            alert("填入的信息为：" + info);
+        }
+
         function openBaidu() {
             window.open("https://www.baidu.com", "_blank", "width=600 height=400")
         }
