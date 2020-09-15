@@ -1,0 +1,31 @@
+/* 解决不同浏览器兼容性问题的css */
+
+body {
+    background-color: #efefef;
+}
+
+html,
+body,
+ul,
+li {
+    margin: 0px;
+    padding: 0px;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 去掉左右间距 */
+dl,
+dt,
+dd {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}

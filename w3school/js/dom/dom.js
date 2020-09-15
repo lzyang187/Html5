@@ -24,7 +24,7 @@ console.log(p1.attributes[0].nodeValue);
 console.log("p1父节点的子节点列表：");
 console.log(p1.parentNode.childNodes);
 
-/** 以下是修改类 */
+/** 以下是修改DOM的部分 */
 
 document.getElementById("img1").src = "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png";
 p1.style.color = "red";
@@ -64,3 +64,11 @@ body.removeChild(document.getElementById("a1Id"));
 var p2 = document.getElementById("p2Id");
 // newP.setAttribute("")
 body.replaceChild(newP, p2);
+
+// 改变样式
+newP.style.color = "blue";
+newP.style.fontSize = "large";
+// 添加点击事件：以function引出
+newP.onclick = function () {
+    click1();
+};

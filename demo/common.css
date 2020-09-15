@@ -1,6 +1,9 @@
+/* 公共复用的css */
+
 body {
     background-color: white;
     padding: 10px;
+    font-size: 14px;
 }
 
 h1 {

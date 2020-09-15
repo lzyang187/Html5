@@ -4,6 +4,7 @@
 // alert(document.documentElement.innerHTML);
 
 window.onload = function () {
+    
     var body = document.getElementsByTagName("body")[0];
     // for (var i = 0; i < body.childNodes.length; i++) {
     //     console.log("第" + i + "个节点的nodeName：" + body.childNodes[i].nodeName + " nodeValue：" + body.childNodes[i].nodeValue + " nodeType：" + body.childNodes[i].nodeType);
